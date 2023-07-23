@@ -1,0 +1,3 @@
+[submodule "libjni"]
+	path = libjni
+	url = https://github.com/slkagura/libjni.git
