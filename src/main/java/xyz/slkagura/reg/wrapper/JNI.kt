@@ -6,7 +6,7 @@ class JNI {
     companion object {
         init {
             System.load(
-                FileSystems.getDefault().getPath("libreg/build/shared/libreg.debug.dll").normalize().toAbsolutePath().toString()
+                FileSystems.getDefault().getPath("libjni/build/shared/libreg.debug.dll").normalize().toAbsolutePath().toString()
             )
         }
         

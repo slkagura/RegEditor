@@ -27,9 +27,8 @@ dependencies {
     implementation(kotlin("stdlib-jdk8"))
 }
 
+// Add jvm library path in unit test task. Default property "java.library.path" is null.
 tasks.named<Test>("test") {
-    println("JAVA_LIBRARY_PATH: ${systemProperties["java.library.path"]}") // 默认值为 null
-    systemProperties["java.library.path"] = file("${project}/build/shared").canonicalPath
-    println("JAVA_LIBRARY_PATH Modified: ${systemProperties["java.library.path"]}")
-    dependsOn(":hello:linkDebug") // 在linkDebug之后执行
+    // This path depends on libjni repository, please set to your project.
+    systemProperties["java.library.path"] = file("${project}/libjni/build/shared").canonicalPath
 }
